@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportecertificado" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c6140ca9-4073-403e-8cee-a396573d16c4">
+	<property name="ireport.zoom" value="0.7513148009015777"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Heading 1" fontSize="16" isBold="true"/>
+	<queryString>
+		<![CDATA[SELECT nombre FROM estudiante e,control c WHERE e.id=c.estudiante_id]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="nombre" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{nombre}]]></groupExpression>
+		<groupHeader>
+			<band height="50">
+				<textField>
+					<reportElement x="143" y="14" width="492" height="36" uuid="36fb7d07-43d6-427b-b725-6115fe8e1297"/>
+					<textElement textAlignment="Center">
+						<font size="18" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="50"/>
+		</groupFooter>
+	</group>
+</jasperReport>

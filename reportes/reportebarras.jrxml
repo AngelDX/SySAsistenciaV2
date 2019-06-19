@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteventas" language="groovy" columnCount="3" pageWidth="595" pageHeight="842" columnWidth="185" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="71c480f4-b95b-4f67-ac7e-a19e15276231">
+	<property name="ireport.zoom" value="1.6105100000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     estudiante.`id` AS estudiante_id,
+     estudiante.`codigo` AS estudiante_codigo,
+     estudiante.`nombre` AS estudiante_nombre,
+     estudiante.`carrera` AS estudiante_carrera,
+     estudiante.`carrerafull` AS estudiante_carrerafull,
+     estudiante.`ciclo` AS estudiante_ciclo,
+     estudiante.`grupo` AS estudiante_grupo
+FROM
+     estudiante
+ORDER BY
+     carrera,ciclo,grupo,nombre]]>
+	</queryString>
+	<field name="estudiante_id" class="java.lang.Integer"/>
+	<field name="estudiante_codigo" class="java.lang.String"/>
+	<field name="estudiante_nombre" class="java.lang.String"/>
+	<field name="estudiante_carrera" class="java.lang.String"/>
+	<field name="estudiante_carrerafull" class="java.lang.String"/>
+	<field name="estudiante_ciclo" class="java.lang.String"/>
+	<field name="estudiante_grupo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="80" splitType="Stretch">
+			<textField>
+				<reportElement uuid="5f1571c2-8cb9-46e9-bb56-a67e5a9ea430" x="0" y="26" width="184" height="13"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="00015304-cda8-47d7-8d95-3c6bd6fabd00" x="0" y="54" width="184" height="16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_carrerafull}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d9ccb9f6-531a-4ccc-86fd-446c2425b2f2" x="0" y="39" width="184" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiante_nombre}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement uuid="7d35a3ad-d380-4c07-8f2f-18feaade4286" x="32" y="4" width="114" height="20"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code39" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$F{estudiante_codigo}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<textField>
+				<reportElement uuid="b0c15342-fe84-43e0-a835-ed98a748e969" x="13" y="0" width="15" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_ciclo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ff31a155-821a-47e0-9c79-504b03b1eee9" x="156" y="0" width="14" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_grupo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

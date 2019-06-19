@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architect-project version="1.0" appversion="0.9.10">
+ <project-name>MER_Asistencia2</project-name>
+ <project-data-sources>
+  <data-source id="DS0">
+   <property key="Logical" value="Not Configured" />
+  </data-source>
+  <data-source id="DS2">
+   <property key="Connection Type" value="MySQL" />
+   <property key="Logical" value="sysasistencia" />
+   <property key="JDBC URL" value="jdbc:mysql://127.0.0.1:3306/db_asistencia2" />
+   <property key="UID" value="root" />
+   <property key="PWD" value="root" />
+   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
+  </data-source>
+ </project-data-sources>
+ <source-databases>
+  <database id="DB0" populated="true" dbcs-ref="DS2" name="sysasistencia" physicalName="sysasistencia" >
+   <catalog id="CAT1" populated="true" name="information_schema" nativeTerm="database" physicalName="information_schema" >
+   </catalog>
+   <catalog id="CAT2" populated="true" name="cdcol" nativeTerm="database" physicalName="cdcol" >
+    <table id="TAB3" populated="true" name="cds" objectType="TABLE" physicalName="cds" remarks="" >
+     <folder id="FOL4" populated="true" name="Columns" physicalName="Columns" type="1" >
+      <column id="COL5" populated="true" autoIncrement="true" name="id" nullable="0" physicalName="id" precision="20" primaryKeySeq="1" referenceCount="1" remarks="" scale="0" sourceDataTypeName="BIGINT UNSIGNED" type="-5" />
+      <column id="COL6" populated="true" autoIncrement="false" name="titel" nullable="1" physicalName="titel" precision="64" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL7" populated="true" autoIncrement="false" name="interpret" nullable="1" physicalName="interpret" precision="64" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL8" populated="true" autoIncrement="false" name="jahr" nullable="1" physicalName="jahr" precision="8" referenceCount="1" remarks="" scale="0" sourceDataTypeName="INT" type="4" />
+     </folder>
+     <folder id="FOL9" populated="false" name="Exported Keys" physicalName="Exported Keys" type="3" />
+     <folder id="FOL10" populated="false" name="Imported Keys" physicalName="Imported Keys" type="2" />
+     <folder id="FOL11" populated="true" name="Indices" physicalName="Indices" type="4" >
+     </folder>
+    </table>
+   </catalog>
+   <catalog id="CAT12" populated="true" name="db_asistencia2" nativeTerm="database" physicalName="db_asistencia2" >
+    <table id="TAB13" populated="true" name="control" objectType="TABLE" physicalName="control" remarks="" >
+     <folder id="FOL14" populated="true" name="Columns" physicalName="Columns" type="1" >
+      <column id="COL15" populated="true" autoIncrement="true" name="id" nullable="0" physicalName="id" precision="8" primaryKeySeq="0" referenceCount="1" remarks="" scale="0" sourceDataTypeName="INT" type="4" />
+      <column id="COL16" populated="true" autoIncrement="false" name="estudiante_id" nullable="0" physicalName="estudiante_id" precision="8" referenceCount="1" remarks="" scale="0" sourceDataTypeName="INT" type="4" />
+      <column id="COL17" populated="true" autoIncrement="false" name="evento_id" nullable="0" physicalName="evento_id" precision="8" referenceCount="1" remarks="" scale="0" sourceDataTypeName="INT" type="4" />
+      <column id="COL18" populated="true" autoIncrement="false" defaultValue="CURRENT_TIMESTAMP" name="fechahora" nullable="0" physicalName="fechahora" precision="0" referenceCount="1" remarks="" scale="0" sourceDataTypeName="TIMESTAMP" type="93" />
+      <column id="COL19" populated="true" autoIncrement="false" name="tipo" nullable="0" physicalName="tipo" precision="10" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+     </folder>
+     <folder id="FOL20" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3" >
+     </folder>
+     <folder id="FOL21" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2" >
+     </folder>
+     <folder id="FOL22" populated="true" name="Indices" physicalName="Indices" type="4" >
+      <index id="IDX23" populated="true" clustered="false" index-type="BTREE" name="PRIMARY" physicalName="PRIMARY" primaryKeyIndex="true" qualifier="" unique="true" >
+       <index-column id="IDC24" populated="true" ascendingOrDescending="ASCENDING" column-ref="COL15" name="id" physicalName="id" />
+      </index>
+     </folder>
+    </table>
+    <table id="TAB25" populated="true" name="estudiante" objectType="TABLE" physicalName="estudiante" remarks="" >
+     <folder id="FOL26" populated="true" name="Columns" physicalName="Columns" type="1" >
+      <column id="COL27" populated="true" autoIncrement="true" name="id" nullable="0" physicalName="id" precision="8" primaryKeySeq="0" referenceCount="1" remarks="" scale="0" sourceDataTypeName="INT" type="4" />
+      <column id="COL28" populated="true" autoIncrement="false" name="codigo" nullable="1" physicalName="codigo" precision="64" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL29" populated="true" autoIncrement="false" name="nombre" nullable="1" physicalName="nombre" precision="64" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL30" populated="true" autoIncrement="false" name="carrera" nullable="1" physicalName="carrera" precision="64" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL31" populated="true" autoIncrement="false" name="carrerafull" nullable="1" physicalName="carrerafull" precision="64" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL32" populated="true" autoIncrement="false" name="ciclo" nullable="1" physicalName="ciclo" precision="11" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL33" populated="true" autoIncrement="false" name="grupo" nullable="1" physicalName="grupo" precision="64" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+     </folder>
+     <folder id="FOL34" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3" >
+     </folder>
+     <folder id="FOL35" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2" >
+     </folder>
+     <folder id="FOL36" populated="true" name="Indices" physicalName="Indices" type="4" >
+      <index id="IDX37" populated="true" clustered="false" index-type="BTREE" name="PRIMARY" physicalName="PRIMARY" primaryKeyIndex="true" qualifier="" unique="true" >
+       <index-column id="IDC38" populated="true" ascendingOrDescending="ASCENDING" column-ref="COL27" name="id" physicalName="id" />
+      </index>
+     </folder>
+    </table>
+    <table id="TAB39" populated="true" name="evento" objectType="TABLE" physicalName="evento" remarks="" >
+     <folder id="FOL40" populated="true" name="Columns" physicalName="Columns" type="1" >
+      <column id="COL41" populated="true" autoIncrement="true" name="id" nullable="0" physicalName="id" precision="8" primaryKeySeq="0" referenceCount="1" remarks="" scale="0" sourceDataTypeName="INT" type="4" />
+      <column id="COL42" populated="true" autoIncrement="false" name="descripcion" nullable="0" physicalName="descripcion" precision="30" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL43" populated="true" autoIncrement="false" defaultValue="CURRENT_TIMESTAMP" name="fechaini" nullable="0" physicalName="fechaini" precision="0" referenceCount="1" remarks="" scale="0" sourceDataTypeName="TIMESTAMP" type="93" />
+      <column id="COL44" populated="true" autoIncrement="false" defaultValue="0000-00-00 00:00:00" name="fechafin" nullable="0" physicalName="fechafin" precision="0" referenceCount="1" remarks="" scale="0" sourceDataTypeName="TIMESTAMP" type="93" />
+      <column id="COL45" populated="true" autoIncrement="false" name="ubicacion" nullable="0" physicalName="ubicacion" precision="40" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL46" populated="true" autoIncrement="false" name="costo1" nullable="0" physicalName="costo1" precision="17" referenceCount="1" remarks="" scale="0" sourceDataTypeName="DOUBLE" type="8" />
+      <column id="COL47" populated="true" autoIncrement="false" name="costo2" nullable="0" physicalName="costo2" precision="17" referenceCount="1" remarks="" scale="0" sourceDataTypeName="DOUBLE" type="8" />
+      <column id="COL48" populated="true" autoIncrement="false" name="costo3" nullable="0" physicalName="costo3" precision="17" referenceCount="1" remarks="" scale="0" sourceDataTypeName="DOUBLE" type="8" />
+     </folder>
+     <folder id="FOL49" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3" >
+     </folder>
+     <folder id="FOL50" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2" >
+     </folder>
+     <folder id="FOL51" populated="true" name="Indices" physicalName="Indices" type="4" >
+      <index id="IDX52" populated="true" clustered="false" index-type="BTREE" name="PRIMARY" physicalName="PRIMARY" primaryKeyIndex="true" qualifier="" unique="true" >
+       <index-column id="IDC53" populated="true" ascendingOrDescending="ASCENDING" column-ref="COL41" name="id" physicalName="id" />
+      </index>
+     </folder>
+    </table>
+    <table id="TAB54" populated="true" name="participante" objectType="TABLE" physicalName="participante" remarks="" >
+     <folder id="FOL55" populated="true" name="Columns" physicalName="Columns" type="1" >
+      <column id="COL56" populated="true" autoIncrement="true" name="id" nullable="0" physicalName="id" precision="8" primaryKeySeq="0" referenceCount="1" remarks="" scale="0" sourceDataTypeName="INT" type="4" />
+      <column id="COL57" populated="true" autoIncrement="false" name="nombre" nullable="0" physicalName="nombre" precision="40" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL58" populated="true" autoIncrement="false" name="email" nullable="0" physicalName="email" precision="40" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL59" populated="true" autoIncrement="false" name="celular" nullable="0" physicalName="celular" precision="20" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL60" populated="true" autoIncrement="false" name="tipo" nullable="0" physicalName="tipo" precision="30" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+     </folder>
+     <folder id="FOL61" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3" >
+     </folder>
+     <folder id="FOL62" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2" >
+     </folder>
+     <folder id="FOL63" populated="true" name="Indices" physicalName="Indices" type="4" >
+      <index id="IDX64" populated="true" clustered="false" index-type="BTREE" name="PRIMARY" physicalName="PRIMARY" primaryKeyIndex="true" qualifier="" unique="true" >
+       <index-column id="IDC65" populated="true" ascendingOrDescending="ASCENDING" column-ref="COL56" name="id" physicalName="id" />
+      </index>
+     </folder>
+    </table>
+    <table id="TAB66" populated="true" name="persona" objectType="TABLE" physicalName="persona" remarks="" >
+     <folder id="FOL67" populated="true" name="Columns" physicalName="Columns" type="1" >
+      <column id="COL68" populated="true" autoIncrement="true" name="id_persona" nullable="0" physicalName="id_persona" precision="8" primaryKeySeq="0" referenceCount="1" remarks="" scale="0" sourceDataTypeName="INT" type="4" />
+      <column id="COL69" populated="true" autoIncrement="false" name="nom_pe" nullable="0" physicalName="nom_pe" precision="50" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL70" populated="true" autoIncrement="false" name="dni_pe" nullable="0" physicalName="dni_pe" precision="8" referenceCount="1" remarks="" scale="0" sourceDataTypeName="INT" type="4" />
+      <column id="COL71" populated="true" autoIncrement="false" name="dir_pe" nullable="0" physicalName="dir_pe" precision="60" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL72" populated="true" autoIncrement="false" name="cel_pe" nullable="0" physicalName="cel_pe" precision="15" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL73" populated="true" autoIncrement="false" name="ema_pe" nullable="0" physicalName="ema_pe" precision="40" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL74" populated="true" autoIncrement="false" name="niv_pe" nullable="0" physicalName="niv_pe" precision="20" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL75" populated="true" autoIncrement="false" name="usu_pe" nullable="0" physicalName="usu_pe" precision="20" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL76" populated="true" autoIncrement="false" name="pas_pe" nullable="0" physicalName="pas_pe" precision="60" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL77" populated="true" autoIncrement="false" name="act_pe" nullable="0" physicalName="act_pe" precision="2" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL78" populated="true" autoIncrement="false" name="fec_pe" nullable="0" physicalName="fec_pe" precision="0" referenceCount="1" remarks="" scale="0" sourceDataTypeName="DATE" type="91" />
+     </folder>
+     <folder id="FOL79" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3" >
+     </folder>
+     <folder id="FOL80" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2" >
+     </folder>
+     <folder id="FOL81" populated="true" name="Indices" physicalName="Indices" type="4" >
+      <index id="IDX82" populated="true" clustered="false" index-type="BTREE" name="PRIMARY" physicalName="PRIMARY" primaryKeyIndex="true" qualifier="" unique="true" >
+       <index-column id="IDC83" populated="true" ascendingOrDescending="ASCENDING" column-ref="COL68" name="id_persona" physicalName="id_persona" />
+      </index>
+     </folder>
+    </table>
+    <table id="TAB84" populated="true" name="voucher" objectType="TABLE" physicalName="voucher" remarks="" >
+     <folder id="FOL85" populated="true" name="Columns" physicalName="Columns" type="1" >
+      <column id="COL86" populated="true" autoIncrement="true" name="id" nullable="0" physicalName="id" precision="8" primaryKeySeq="0" referenceCount="1" remarks="" scale="0" sourceDataTypeName="INT" type="4" />
+      <column id="COL87" populated="true" autoIncrement="false" name="estudiante_id" nullable="0" physicalName="estudiante_id" precision="8" referenceCount="1" remarks="" scale="0" sourceDataTypeName="INT" type="4" />
+      <column id="COL88" populated="true" autoIncrement="false" name="evento_id" nullable="0" physicalName="evento_id" precision="8" referenceCount="1" remarks="" scale="0" sourceDataTypeName="INT" type="4" />
+      <column id="COL89" populated="true" autoIncrement="false" name="numero" nullable="0" physicalName="numero" precision="20" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+      <column id="COL90" populated="true" autoIncrement="false" name="importe" nullable="0" physicalName="importe" precision="10" referenceCount="1" remarks="" scale="2" sourceDataTypeName="DOUBLE" type="8" />
+      <column id="COL91" populated="true" autoIncrement="false" name="tipo" nullable="0" physicalName="tipo" precision="20" referenceCount="1" remarks="" scale="0" sourceDataTypeName="VARCHAR" type="12" />
+     </folder>
+     <folder id="FOL92" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3" >
+     </folder>
+     <folder id="FOL93" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2" >
+     </folder>
+     <folder id="FOL94" populated="true" name="Indices" physicalName="Indices" type="4" >
+      <index id="IDX95" populated="true" clustered="false" index-type="BTREE" name="PRIMARY" physicalName="PRIMARY" primaryKeyIndex="true" qualifier="" unique="true" >
+       <index-column id="IDC96" populated="true" ascendingOrDescending="ASCENDING" column-ref="COL86" name="id" physicalName="id" />
+      </index>
+     </folder>
+    </table>
+   </catalog>
+   <catalog id="CAT97" populated="false" name="dbcomputer" nativeTerm="database" physicalName="dbcomputer" />
+   <catalog id="CAT98" populated="false" name="dbconcurso" nativeTerm="database" physicalName="dbconcurso" />
+   <catalog id="CAT99" populated="false" name="mysql" nativeTerm="database" physicalName="mysql" />
+   <catalog id="CAT100" populated="false" name="performance_schema" nativeTerm="database" physicalName="performance_schema" />
+   <catalog id="CAT101" populated="false" name="phpmyadmin" nativeTerm="database" physicalName="phpmyadmin" />
+   <catalog id="CAT102" populated="false" name="test" nativeTerm="database" physicalName="test" />
+   <catalog id="CAT103" populated="false" name="webauth" nativeTerm="database" physicalName="webauth" />
+   <catalog id="CAT104" populated="false" name="wordpress" nativeTerm="database" physicalName="wordpress" />
+   <relationships>
+   </relationships>
+  </database>
+ </source-databases>
+ <target-database dbcs-ref="DS0">
+  <table id="TAB105" populated="true" name="estudiante" objectType="TABLE" physicalName="estudiante" remarks="" >
+   <folder id="FOL106" populated="true" name="Columns" physicalName="Columns" type="1" >
+    <column id="COL107" populated="true" autoIncrement="true" name="id" nullable="0" physicalName="id" precision="8" primaryKeySeq="0" referenceCount="1" remarks="" scale="0" source-column-ref="COL27" sourceDataTypeName="INT" type="4" />
+    <column id="COL108" populated="true" autoIncrement="false" name="codigo" nullable="1" physicalName="codigo" precision="64" referenceCount="1" remarks="" scale="0" source-column-ref="COL28" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL109" populated="true" autoIncrement="false" name="nombre" nullable="1" physicalName="nombre" precision="64" referenceCount="1" remarks="" scale="0" source-column-ref="COL29" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL110" populated="true" autoIncrement="false" name="carrera" nullable="1" physicalName="carrera" precision="64" referenceCount="1" remarks="" scale="0" source-column-ref="COL30" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL111" populated="true" autoIncrement="false" name="carrerafull" nullable="1" physicalName="carrerafull" precision="64" referenceCount="1" remarks="" scale="0" source-column-ref="COL31" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL112" populated="true" autoIncrement="false" name="ciclo" nullable="1" physicalName="ciclo" precision="11" referenceCount="1" remarks="" scale="0" source-column-ref="COL32" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL113" populated="true" autoIncrement="false" name="grupo" nullable="1" physicalName="grupo" precision="64" referenceCount="1" remarks="" scale="0" source-column-ref="COL33" sourceDataTypeName="VARCHAR" type="12" />
+   </folder>
+   <folder id="FOL114" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3" >
+   </folder>
+   <folder id="FOL115" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2" >
+   </folder>
+   <folder id="FOL116" populated="true" name="Indices" physicalName="Indices" type="4" >
+    <index id="IDX117" populated="true" clustered="false" index-type="BTREE" name="PRIMARY" physicalName="PRIMARY" primaryKeyIndex="true" qualifier="" unique="true" >
+     <index-column id="IDC118" populated="true" ascendingOrDescending="ASCENDING" column-ref="COL107" name="id" physicalName="id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB119" populated="true" name="evento" objectType="TABLE" physicalName="evento" remarks="" >
+   <folder id="FOL120" populated="true" name="Columns" physicalName="Columns" type="1" >
+    <column id="COL121" populated="true" autoIncrement="true" name="id" nullable="0" physicalName="id" precision="8" primaryKeySeq="0" referenceCount="1" remarks="" scale="0" source-column-ref="COL41" sourceDataTypeName="INT" type="4" />
+    <column id="COL122" populated="true" autoIncrement="false" name="descripcion" nullable="0" physicalName="descripcion" precision="30" referenceCount="1" remarks="" scale="0" source-column-ref="COL42" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL123" populated="true" autoIncrement="false" defaultValue="CURRENT_TIMESTAMP" name="fechaini" nullable="0" physicalName="fechaini" precision="0" referenceCount="1" remarks="" scale="0" source-column-ref="COL43" sourceDataTypeName="TIMESTAMP" type="93" />
+    <column id="COL124" populated="true" autoIncrement="false" defaultValue="0000-00-00 00:00:00" name="fechafin" nullable="0" physicalName="fechafin" precision="0" referenceCount="1" remarks="" scale="0" source-column-ref="COL44" sourceDataTypeName="TIMESTAMP" type="93" />
+    <column id="COL125" populated="true" autoIncrement="false" name="ubicacion" nullable="0" physicalName="ubicacion" precision="40" referenceCount="1" remarks="" scale="0" source-column-ref="COL45" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL126" populated="true" autoIncrement="false" name="costo1" nullable="0" physicalName="costo1" precision="17" referenceCount="1" remarks="" scale="0" source-column-ref="COL46" sourceDataTypeName="DOUBLE" type="8" />
+    <column id="COL127" populated="true" autoIncrement="false" name="costo2" nullable="0" physicalName="costo2" precision="17" referenceCount="1" remarks="" scale="0" source-column-ref="COL47" sourceDataTypeName="DOUBLE" type="8" />
+    <column id="COL128" populated="true" autoIncrement="false" name="costo3" nullable="0" physicalName="costo3" precision="17" referenceCount="1" remarks="" scale="0" source-column-ref="COL48" sourceDataTypeName="DOUBLE" type="8" />
+   </folder>
+   <folder id="FOL129" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3" >
+   </folder>
+   <folder id="FOL130" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2" >
+   </folder>
+   <folder id="FOL131" populated="true" name="Indices" physicalName="Indices" type="4" >
+    <index id="IDX132" populated="true" clustered="false" index-type="BTREE" name="PRIMARY" physicalName="PRIMARY" primaryKeyIndex="true" qualifier="" unique="true" >
+     <index-column id="IDC133" populated="true" ascendingOrDescending="ASCENDING" column-ref="COL121" name="id" physicalName="id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB134" populated="true" name="control" objectType="TABLE" physicalName="control" remarks="" >
+   <folder id="FOL135" populated="true" name="Columns" physicalName="Columns" type="1" >
+    <column id="COL136" populated="true" autoIncrement="false" name="id" nullable="0" physicalName="id" precision="8" primaryKeySeq="0" referenceCount="4" remarks="" scale="0" source-column-ref="COL15" sourceDataTypeName="INT" type="4" />
+    <column id="COL137" populated="true" autoIncrement="false" name="estudiante_id" nullable="0" physicalName="estudiante_id" precision="8" referenceCount="1" remarks="" scale="0" source-column-ref="COL16" sourceDataTypeName="INT" type="4" />
+    <column id="COL138" populated="true" autoIncrement="false" name="evento_id" nullable="0" physicalName="evento_id" precision="8" referenceCount="1" remarks="" scale="0" source-column-ref="COL17" sourceDataTypeName="INT" type="4" />
+    <column id="COL139" populated="true" autoIncrement="false" defaultValue="CURRENT_TIMESTAMP" name="fechahora" nullable="0" physicalName="fechahora" precision="0" referenceCount="1" remarks="" scale="0" source-column-ref="COL18" sourceDataTypeName="TIMESTAMP" type="93" />
+    <column id="COL140" populated="true" autoIncrement="false" name="tipo" nullable="0" physicalName="tipo" precision="10" referenceCount="1" remarks="" scale="0" source-column-ref="COL19" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL141" populated="true" autoIncrement="false" autoIncrementSequenceName="control_participante_id_seq" name="participante_id" nullable="0" physicalName="participante_id" precision="8" referenceCount="1" remarks="" scale="0" type="4" />
+   </folder>
+   <folder id="FOL142" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3" >
+   </folder>
+   <folder id="FOL143" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2" >
+   </folder>
+   <folder id="FOL144" populated="true" name="Indices" physicalName="Indices" type="4" >
+    <index id="IDX145" populated="true" clustered="false" index-type="BTREE" name="PRIMARY" physicalName="PRIMARY" primaryKeyIndex="true" qualifier="" unique="true" >
+     <index-column id="IDC146" populated="true" ascendingOrDescending="ASCENDING" column-ref="COL136" name="id" physicalName="id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB147" populated="true" name="persona" objectType="TABLE" physicalName="persona" remarks="" >
+   <folder id="FOL148" populated="true" name="Columns" physicalName="Columns" type="1" >
+    <column id="COL149" populated="true" autoIncrement="true" name="id_persona" nullable="0" physicalName="id_persona" precision="8" primaryKeySeq="0" referenceCount="1" remarks="" scale="0" source-column-ref="COL68" sourceDataTypeName="INT" type="4" />
+    <column id="COL150" populated="true" autoIncrement="false" name="nom_pe" nullable="0" physicalName="nom_pe" precision="50" referenceCount="1" remarks="" scale="0" source-column-ref="COL69" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL151" populated="true" autoIncrement="false" name="dni_pe" nullable="0" physicalName="dni_pe" precision="8" referenceCount="1" remarks="" scale="0" source-column-ref="COL70" sourceDataTypeName="INT" type="4" />
+    <column id="COL152" populated="true" autoIncrement="false" name="dir_pe" nullable="0" physicalName="dir_pe" precision="60" referenceCount="1" remarks="" scale="0" source-column-ref="COL71" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL153" populated="true" autoIncrement="false" name="cel_pe" nullable="0" physicalName="cel_pe" precision="15" referenceCount="1" remarks="" scale="0" source-column-ref="COL72" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL154" populated="true" autoIncrement="false" name="ema_pe" nullable="0" physicalName="ema_pe" precision="40" referenceCount="1" remarks="" scale="0" source-column-ref="COL73" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL155" populated="true" autoIncrement="false" name="niv_pe" nullable="0" physicalName="niv_pe" precision="20" referenceCount="1" remarks="" scale="0" source-column-ref="COL74" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL156" populated="true" autoIncrement="false" name="usu_pe" nullable="0" physicalName="usu_pe" precision="20" referenceCount="1" remarks="" scale="0" source-column-ref="COL75" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL157" populated="true" autoIncrement="false" name="pas_pe" nullable="0" physicalName="pas_pe" precision="60" referenceCount="1" remarks="" scale="0" source-column-ref="COL76" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL158" populated="true" autoIncrement="false" name="act_pe" nullable="0" physicalName="act_pe" precision="2" referenceCount="1" remarks="" scale="0" source-column-ref="COL77" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL159" populated="true" autoIncrement="false" name="fec_pe" nullable="0" physicalName="fec_pe" precision="0" referenceCount="1" remarks="" scale="0" source-column-ref="COL78" sourceDataTypeName="DATE" type="91" />
+   </folder>
+   <folder id="FOL160" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3" >
+   </folder>
+   <folder id="FOL161" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2" >
+   </folder>
+   <folder id="FOL162" populated="true" name="Indices" physicalName="Indices" type="4" >
+    <index id="IDX163" populated="true" clustered="false" index-type="BTREE" name="PRIMARY" physicalName="PRIMARY" primaryKeyIndex="true" qualifier="" unique="true" >
+     <index-column id="IDC164" populated="true" ascendingOrDescending="ASCENDING" column-ref="COL149" name="id_persona" physicalName="id_persona" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB165" populated="true" name="voucher" objectType="TABLE" physicalName="voucher" remarks="" >
+   <folder id="FOL166" populated="true" name="Columns" physicalName="Columns" type="1" >
+    <column id="COL167" populated="true" autoIncrement="false" name="id" nullable="0" physicalName="id" precision="8" primaryKeySeq="0" referenceCount="2" remarks="" scale="0" source-column-ref="COL86" sourceDataTypeName="INT" type="4" />
+    <column id="COL168" populated="true" autoIncrement="false" name="estudiante_id" nullable="0" physicalName="estudiante_id" precision="8" referenceCount="1" remarks="" scale="0" source-column-ref="COL87" sourceDataTypeName="INT" type="4" />
+    <column id="COL169" populated="true" autoIncrement="false" name="evento_id" nullable="0" physicalName="evento_id" precision="8" referenceCount="1" remarks="" scale="0" source-column-ref="COL88" sourceDataTypeName="INT" type="4" />
+    <column id="COL170" populated="true" autoIncrement="false" name="numero" nullable="0" physicalName="numero" precision="20" referenceCount="1" remarks="" scale="0" source-column-ref="COL89" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL171" populated="true" autoIncrement="false" name="importe" nullable="0" physicalName="importe" precision="10" referenceCount="1" remarks="" scale="2" source-column-ref="COL90" sourceDataTypeName="DOUBLE" type="8" />
+    <column id="COL172" populated="true" autoIncrement="false" name="tipo" nullable="0" physicalName="tipo" precision="20" referenceCount="1" remarks="" scale="0" source-column-ref="COL91" sourceDataTypeName="VARCHAR" type="12" />
+   </folder>
+   <folder id="FOL173" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3" >
+   </folder>
+   <folder id="FOL174" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2" >
+   </folder>
+   <folder id="FOL175" populated="true" name="Indices" physicalName="Indices" type="4" >
+    <index id="IDX176" populated="true" clustered="false" index-type="BTREE" name="PRIMARY" physicalName="PRIMARY" primaryKeyIndex="true" qualifier="" unique="true" >
+     <index-column id="IDC177" populated="true" ascendingOrDescending="ASCENDING" column-ref="COL167" name="id" physicalName="id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB178" populated="true" name="participante" objectType="TABLE" physicalName="participante" remarks="" >
+   <folder id="FOL179" populated="true" name="Columns" physicalName="Columns" type="1" >
+    <column id="COL180" populated="true" autoIncrement="true" name="id" nullable="0" physicalName="id" precision="8" primaryKeySeq="0" referenceCount="1" remarks="" scale="0" source-column-ref="COL56" sourceDataTypeName="INT" type="4" />
+    <column id="COL181" populated="true" autoIncrement="false" name="nombre" nullable="0" physicalName="nombre" precision="40" referenceCount="1" remarks="" scale="0" source-column-ref="COL57" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL182" populated="true" autoIncrement="false" autoIncrementSequenceName="participante_entidad_seq" name="entidad" nullable="0" physicalName="entidad" precision="30" referenceCount="1" remarks="" scale="0" type="12" />
+    <column id="COL183" populated="true" autoIncrement="false" name="email" nullable="0" physicalName="email" precision="40" referenceCount="1" remarks="" scale="0" source-column-ref="COL58" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL184" populated="true" autoIncrement="false" name="celular" nullable="0" physicalName="celular" precision="20" referenceCount="1" remarks="" scale="0" source-column-ref="COL59" sourceDataTypeName="VARCHAR" type="12" />
+    <column id="COL185" populated="true" autoIncrement="false" name="tipo" nullable="0" physicalName="tipo" precision="30" referenceCount="1" remarks="" scale="0" source-column-ref="COL60" sourceDataTypeName="VARCHAR" type="12" />
+   </folder>
+   <folder id="FOL186" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3" >
+   </folder>
+   <folder id="FOL187" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2" >
+   </folder>
+   <folder id="FOL188" populated="true" name="Indices" physicalName="Indices" type="4" >
+    <index id="IDX189" populated="true" clustered="false" index-type="BTREE" name="PRIMARY" physicalName="PRIMARY" primaryKeyIndex="true" qualifier="" unique="true" >
+     <index-column id="IDC190" populated="true" ascendingOrDescending="ASCENDING" column-ref="COL180" name="id" physicalName="id" />
+    </index>
+   </folder>
+  </table>
+  <relationships>
+   <relationship id="REL191" populated="true" deferrability="7" deleteRule="0" fk-table-ref="TAB165" fkCardinality="7" identifying="false" name="estudiante_voucher_fk" physicalName="estudiante_voucher_fk" pk-table-ref="TAB105" pkCardinality="2" updateRule="0" >
+    <column-mapping id="CMP192" populated="true" fk-column-ref="COL168" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL107" />
+   </relationship>
+   <relationship id="REL193" populated="true" deferrability="7" deleteRule="0" fk-table-ref="TAB134" fkCardinality="7" identifying="false" name="estudiante_control_fk" physicalName="estudiante_control_fk" pk-table-ref="TAB105" pkCardinality="2" updateRule="0" >
+    <column-mapping id="CMP194" populated="true" fk-column-ref="COL137" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL107" />
+   </relationship>
+   <relationship id="REL195" populated="true" deferrability="7" deleteRule="0" fk-table-ref="TAB134" fkCardinality="7" identifying="false" name="evento_control_fk" physicalName="evento_control_fk" pk-table-ref="TAB119" pkCardinality="2" updateRule="0" >
+    <column-mapping id="CMP196" populated="true" fk-column-ref="COL138" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL121" />
+   </relationship>
+   <reference ref-id="REL193" />
+   <reference ref-id="REL195" />
+   <relationship id="REL197" populated="true" deferrability="7" deleteRule="0" fk-table-ref="TAB134" fkCardinality="7" identifying="false" name="participante_control_fk" physicalName="participante_control_fk" pk-table-ref="TAB178" pkCardinality="2" updateRule="0" >
+    <column-mapping id="CMP198" populated="true" fk-column-ref="COL141" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL180" />
+   </relationship>
+   <reference ref-id="REL191" />
+   <reference ref-id="REL197" />
+  </relationships>
+ </target-database>
+ <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
+ <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
+ <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear">
+  <table-pane table-ref="TAB105" x="86" y="77" />
+  <table-pane table-ref="TAB119" x="572" y="67" />
+  <table-pane table-ref="TAB134" x="319" y="98" />
+  <table-pane table-ref="TAB147" x="586" y="269" />
+  <table-pane table-ref="TAB165" x="86" y="293" />
+  <table-pane table-ref="TAB178" x="334" y="303" />
+  <table-link relationship-ref="REL197" pk-x="72" pk-y="0" fk-x="87" fk-y="127" orientation="72" />
+  <table-link relationship-ref="REL195" pk-x="0" pk-y="95" fk-x="159" fk-y="41" orientation="18" />
+  <table-link relationship-ref="REL193" pk-x="144" pk-y="73" fk-x="0" fk-y="52" orientation="33" />
+  <table-link relationship-ref="REL191" pk-x="69" pk-y="143" fk-x="69" fk-y="0" orientation="132" />
+ </play-pen>
+ <profiles topNCount="10">
+  </profiles>
+</architect-project>

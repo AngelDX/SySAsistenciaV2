@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteestudiantes" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="056ff900-f85a-4ebc-b49f-e43917c8506e">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="383"/>
+	<property name="ireport.y" value="298"/>
+	<queryString>
+		<![CDATA[SELECT
+     estudiante.`id` AS estudiante_id,
+     estudiante.`codigo` AS estudiante_codigo,
+     estudiante.`nombre` AS estudiante_nombre,
+     estudiante.`carrera` AS estudiante_carrera,
+     estudiante.`carrerafull` AS estudiante_carrerafull,
+     estudiante.`ciclo` AS estudiante_ciclo,
+     estudiante.`grupo` AS estudiante_grupo,
+     voucher.`id` AS voucher_id,
+     voucher.`estudiante_id` AS voucher_estudiante_id,
+     voucher.`evento_id` AS voucher_evento_id,
+     voucher.`numero` AS voucher_numero,
+     voucher.`importe` AS voucher_importe,
+     voucher.`tipo` AS voucher_tipo,
+     evento.`id` AS evento_id,
+     evento.`descripcion` AS evento_descripcion,
+     evento.`fechaini` AS evento_fechaini,
+     evento.`fechafin` AS evento_fechafin,
+     evento.`ubicacion` AS evento_ubicacion,
+     evento.`costo1` AS evento_costo1,
+     evento.`costo2` AS evento_costo2,
+     evento.`costo3` AS evento_costo3,
+     control.`id` AS control_id,
+     control.`estudiante_id` AS control_estudiante_id,
+     control.`evento_id` AS control_evento_id,
+     control.`fechahora` AS control_fechahora,
+     control.`tipo` AS control_tipo
+FROM
+     `estudiante` estudiante INNER JOIN `voucher` voucher ON estudiante.`id` = voucher.`estudiante_id`
+     INNER JOIN `control` control ON estudiante.`id` = control.`estudiante_id`
+     INNER JOIN `evento` evento ON control.`evento_id` = evento.`id`
+     AND evento.`id` = voucher.`evento_id`]]>
+	</queryString>
+	<field name="estudiante_id" class="java.lang.Integer"/>
+	<field name="estudiante_codigo" class="java.lang.String"/>
+	<field name="estudiante_nombre" class="java.lang.String"/>
+	<field name="estudiante_carrera" class="java.lang.String"/>
+	<field name="estudiante_carrerafull" class="java.lang.String"/>
+	<field name="estudiante_ciclo" class="java.lang.String"/>
+	<field name="estudiante_grupo" class="java.lang.String"/>
+	<field name="voucher_id" class="java.lang.Integer"/>
+	<field name="voucher_estudiante_id" class="java.lang.Integer"/>
+	<field name="voucher_evento_id" class="java.lang.Integer"/>
+	<field name="voucher_numero" class="java.lang.String"/>
+	<field name="voucher_importe" class="java.lang.Double"/>
+	<field name="voucher_tipo" class="java.lang.String"/>
+	<field name="evento_id" class="java.lang.Integer"/>
+	<field name="evento_descripcion" class="java.lang.String"/>
+	<field name="evento_fechaini" class="java.sql.Timestamp"/>
+	<field name="evento_fechafin" class="java.sql.Timestamp"/>
+	<field name="evento_ubicacion" class="java.lang.String"/>
+	<field name="evento_costo1" class="java.lang.Double"/>
+	<field name="evento_costo2" class="java.lang.Double"/>
+	<field name="evento_costo3" class="java.lang.Double"/>
+	<field name="control_id" class="java.lang.Integer"/>
+	<field name="control_estudiante_id" class="java.lang.Integer"/>
+	<field name="control_evento_id" class="java.lang.Integer"/>
+	<field name="control_fechahora" class="java.sql.Timestamp"/>
+	<field name="control_tipo" class="java.lang.String"/>
+	<group name="estudiante_carrerafull">
+		<groupExpression><![CDATA[$F{estudiante_carrerafull}]]></groupExpression>
+		<groupHeader>
+			<band height="22">
+				<staticText>
+					<reportElement uuid="822d26da-296a-4f3e-8111-cfd3491aac8c" mode="Opaque" x="0" y="0" width="10" height="14" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[#]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="5b75b36a-a5e3-42a8-9976-d7d286394eb8" mode="Opaque" x="10" y="0" width="39" height="14" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Codigo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="bc7db167-21f3-4972-931b-a720f8da850b" mode="Opaque" x="49" y="0" width="140" height="14" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nombre]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="f121e00c-6baa-480a-94ef-829b3aa24eb3" mode="Opaque" x="246" y="0" width="26" height="14" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ciclo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="56340831-d45b-413d-9220-b42ad10141b3" mode="Opaque" x="272" y="0" width="31" height="14" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Grupo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="6c7191e5-871b-4a07-9575-5dc94ff0140c" mode="Opaque" x="189" y="0" width="57" height="14" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[E.A.P]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72"/>
+	</title>
+	<pageHeader>
+		<band height="10"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="29">
+			<textField>
+				<reportElement uuid="7c2cdc73-c463-49eb-98ba-1b213c1b7323" mode="Opaque" x="0" y="0" width="555" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_carrerafull}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="12">
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="df4489b3-79c0-4f6f-ae4b-918fab322116" x="272" y="0" width="31" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_grupo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ff19fcf5-5c84-42e1-acfa-49a0ca507823" x="1" y="0" width="9" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bafaebac-291e-46d3-93b8-219794ae25e6" x="189" y="1" width="57" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_carrera}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="11f49b5c-f3de-4966-9f18-de7107ee2c79" x="10" y="0" width="39" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_codigo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="c49988a8-86c8-458b-b9e4-bf9e3d930c38" x="49" y="1" width="140" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_nombre}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="9ea67ae6-7898-4159-aa87-1f2aea4f2f6f" x="246" y="1" width="26" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiante_ciclo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="822631e3-b6e4-42b9-b040-d9ffd4566d19" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="726c1a68-b103-4d81-b53d-5a772414d199" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="9bdaba55-a2f7-428a-8b26-b05f3cd24703" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
